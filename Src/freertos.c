@@ -160,10 +160,10 @@ void StartDefaultTask(void const * argument)
   {
 	  //osDelay(1000);
 	  // HAL_GPIO_TogglePin( LD4_GPIO_Port, LD4_Pin );
-	  osDelay(200);
+	  osDelay(400);
 	  // Pin in Reset mode swithc on LED
 	  HAL_GPIO_WritePin( LD3_GPIO_Port, LD3_Pin, GPIO_PIN_RESET );
-	  osDelay(800);
+	  osDelay(600);
 	  // Pin in Set mode switch off LED4
 	  HAL_GPIO_WritePin( LD3_GPIO_Port, LD3_Pin, GPIO_PIN_SET );
   }

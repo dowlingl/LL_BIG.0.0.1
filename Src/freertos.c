@@ -56,7 +56,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */     
-
+#include "stm32l4xx_hal.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -158,7 +158,14 @@ void StartDefaultTask(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+	  //osDelay(1000);
+	  // HAL_GPIO_TogglePin( LD4_GPIO_Port, LD4_Pin );
+	  osDelay(200);
+	  // Pin in Reset mode swithc on LED
+	  HAL_GPIO_WritePin( LD3_GPIO_Port, LD3_Pin, GPIO_PIN_RESET );
+	  osDelay(800);
+	  // Pin in Set mode switch off LED4
+	  HAL_GPIO_WritePin( LD3_GPIO_Port, LD3_Pin, GPIO_PIN_SET );
   }
   /* USER CODE END StartDefaultTask */
 }
